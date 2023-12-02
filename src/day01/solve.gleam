@@ -22,10 +22,10 @@ fn find_digit(s: String) {
     |> list.reverse
     |> find_first_digit
 
-    let assert Ok(i) =  {first <> last} 
-      |> int.parse
+  let assert Ok(i) =  {first <> last} 
+    |> int.parse
 
-    i
+  i
 }
 
 fn split_and_find_digit(s: String) -> String { 
@@ -41,7 +41,7 @@ pub fn part1(input: String) {
 }
 
 pub fn part2(input: String) {
-    input
+  input
   |> string.replace(each: "one", with: "one1one")
   |> string.replace(each: "two", with: "two2two")
   |> string.replace(each: "three", with: "three3three")
