@@ -3,6 +3,7 @@ import gleam/io
 import gleam/string
 import gleam/int
 import gleam/list
+import util/parse_util.{parse_int, unwrap}
 
 // Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
 // Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
@@ -15,16 +16,6 @@ type Draw {
 
 type Game {
   Game(id: Int, draws: List(Draw))
-}
-
-fn unwrap(r: Result(a, Nil)) -> a {
-  let assert Ok(i) = r
-  i
-}
-
-fn parse_int(s: String) -> Int {
-  let assert Ok(i) = int.parse(s)
-  i
 }
 
 fn parse_color(d: Draw, s: String) -> Draw {
